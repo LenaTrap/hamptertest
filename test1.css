@@ -6,3 +6,23 @@
 html,#root {
     scroll-behavior: smooth
 }
+
+@media (max-width: 950px) {
+    #table-of-contents {
+        display:none
+    }
+
+    article {
+        max-width: 98%;
+        margin: 0 auto;
+        float: none;
+        padding: 2rem
+    }
+
+    #toggle-toc,#nav-links {
+        display: none!important
+    }
+
+    #chomik {
+        z-index: -1
+    }
