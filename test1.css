@@ -29,11 +29,10 @@ html, #root {
 }
 
 #chomik {
-    position: fixed;   /* fixed so we can move it with transform */
+    position: fixed;
     width: 40px;
     height: 40px;
-    top: 50px;         /* starting vertical position */
-    left: 50%;         /* center horizontally */
+    top: 0;           /* start at very top */
+    left: 50%;        /* center horizontally */
     transform: translateX(-50%) translateY(0px) rotate(0deg);
-    transition: transform 0.05s linear;
 }
