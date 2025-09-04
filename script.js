@@ -1,31 +1,35 @@
 window.addEventListener("DOMContentLoaded", () => {
     const chomik = document.getElementById("chomik");
 
+    // List of hamster costumes
     const costumes = [
-        "chomiczek.png",
+       "chomiczek.png",
         "chomiczek_Lila.png",
         "chomiczek_Julia.png",
         "chomiczek_Kasia.png",
         "chomiczek_Natalia.png"
     ];
 
-    // Pick random costume
-    const randomIndex = Math.floor(Math.random() * costumes.length);
-    chomik.src = costumes[randomIndex];
+    // Pick a random costume on page load
+    chomik.src = costumes[Math.floor(Math.random() * costumes.length)];
 
-    // Run animation only after image loads
-    chomik.onload = () => {
-        window.addEventListener("scroll", () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = scrollTop / docHeight;
+    // Function to update hamster position on scroll
+    function updateHamsterPosition() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
 
-            const maxY = window.innerHeight - chomik.clientHeight;
-            const y = scrollPercent * maxY;
+        const maxY = window.innerHeight - chomik.offsetHeight;
+        const y = scrollPercent * maxY;
 
-            const rotation = scrollPercent * 720; // 2 full spins
+        const rotation = scrollPercent * 720; // spins twice
 
-            chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
-        });
-    };
+        chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
+    }
+
+    // Update on scroll
+    window.addEventListener("scroll", updateHamsterPosition);
+
+    // Run once on page load in case not at top
+    updateHamsterPosition();
 });
