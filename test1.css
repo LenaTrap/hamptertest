@@ -29,12 +29,20 @@ html, #root {
 }
 
 #chomik {
-    position: fixed;      /* stick to the screen */
-    width: 40px;
+    position: fixed;
+    width: 40px;       /* can reduce for mobile */
     height: 40px;
-    left: 50%;            
+    left: 50%;
     transform: translateX(-50%) translateY(0px) rotate(0deg);
     z-index: 9999;
+    transition: transform 0.2s ease-out;
+}
 
-    transition: transform 0.2s ease-out;  /* smooth sliding effect */
+/* Mobile/Tablet adjustments */
+@media (max-width: 950px) {
+    #chomik {
+        width: 30px;
+        height: 30px;
+        left: 45%;  /* shift a bit if screen is narrow */
+    }
 }
