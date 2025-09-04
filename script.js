@@ -1,5 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const chomik = document.getElementById("chomik");
+const chomik = document.getElementById("chomik");
 
   // Costume list
       const costumes = [
