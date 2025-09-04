@@ -5,20 +5,26 @@ body {
 }
 
 #chomik {
-    position: fixed;       /* stick to screen */
-    left: 50%;             /* horizontally center */
-    transform: translateX(-50%) translateY(0px) rotate(0deg);
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: auto;
     z-index: 9999;
-    transition: transform 0.2s ease-out; /* smooth sliding for Y */
-    width: 150px;            /* responsive width relative to viewport */
-    max-width: 160px;       /* prevent it from getting too big on desktop */
-    height: auto;          /* maintain aspect ratio */
 }
 
 /* Mobile/Tablet adjustments */
 @media (max-width: 950px) {
-    #chomik {
-        width: 150px;        /* slightly bigger on smaller screens */
-        max-width: 150px;
+#chomik {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: auto;
+    z-index: 9999;
+}
+
     }
 }
