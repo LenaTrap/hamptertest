@@ -6,15 +6,16 @@ html, body {
 }
 
 #chomik {
-    position: fixed;           /* stays visible on screen */
-    top: 0;                    /* start at top */
-    left: 50%;                 /* horizontally center */
+    position: fixed;
+    top: 0;
+    left: 50%;
     transform: translateX(-50%) translateY(0px) rotate(0deg);
-    width: 8vw;                /* responsive width */
-    max-width: 80px;           /* limit size */
+    width: 80px;           /* base width */
+    max-width: 15vw;       /* responsive for larger screens */
     height: auto;
     z-index: 9999;
 }
+
 
 #content {
     padding: 2rem;
