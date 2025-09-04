@@ -35,7 +35,26 @@
     </div>
 
     <!-- Hamster image -->
-    <img src="chomiczek.png" alt="chomik" id="chomik">
+    <img alt="chomik" id="chomik">
+
+        <!-- Hamster placeholder (no src) -->
+    <img alt="chomik" id="chomik">
+
+    <script>
+      const chomik = document.getElementById("chomik");
+
+      // Costume list
+      const costumes = [
+        "chomiczek.png",
+        "chomiczek_Lila.png",
+        "chomiczek_Julia.png",
+        "chomiczek_Kasia.png",
+        "chomiczek_Natalia.png"
+      ];
+
+      // Pick a random costume and apply it
+      const randomIndex = Math.floor(Math.random() * costumes.length);
+      chomik.src = costumes[randomIndex];
 
      <script src="script.js"></script>
 </body>
