@@ -32,7 +32,8 @@ html, #root {
     position: fixed;
     width: 40px;
     height: 40px;
-    top: 50px;        /* gives starting space so it’s visible */
-    left: 50%;        /* center horizontally */
+    top: 50px;              /* visible start position */
+    left: 50%;              /* horizontally centered */
     transform: translateX(-50%) translateY(0px) rotate(0deg);
+    z-index: 9999;          /* make sure it's on top */
 }
