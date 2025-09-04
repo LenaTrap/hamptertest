@@ -1,48 +1,24 @@
-#root {
-    height: 100%;
-    overflow-y: scroll;
-}
-
-html, #root {
-    scroll-behavior: smooth;
-}
-
-@media (max-width: 950px) {
-    #table-of-contents {
-        display: none;
-    }
-
-    article {
-        max-width: 98%;
-        margin: 0 auto;
-        float: none;
-        padding: 2rem;
-    }
-
-    #toggle-toc, #nav-links {
-        display: none !important;
-    }
-
-    #chomik {
-        z-index: -1;
-    }
+body {
+    margin: 0;
+    font-family: sans-serif;
+    height: 2000px; /* ensure enough scroll space */
 }
 
 #chomik {
-    position: fixed;
-    width: 40px;       /* can reduce for mobile */
-    height: 40px;
-    left: 50%;
+    position: fixed;       /* stick to screen */
+    left: 50%;             /* horizontally center */
     transform: translateX(-50%) translateY(0px) rotate(0deg);
     z-index: 9999;
-    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out; /* smooth sliding for Y */
+    width: 8vw;            /* responsive width relative to viewport */
+    max-width: 60px;       /* prevent it from getting too big on desktop */
+    height: auto;          /* maintain aspect ratio */
 }
 
 /* Mobile/Tablet adjustments */
 @media (max-width: 950px) {
     #chomik {
-        width: 30px;
-        height: 30px;
-        left: 45%;  /* shift a bit if screen is narrow */
+        width: 12vw;        /* slightly bigger on smaller screens */
+        max-width: 50px;
     }
 }
