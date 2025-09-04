@@ -1,30 +1,17 @@
 const chomik = document.getElementById("chomik");
 
-let currentRotation = 0; // current rotation angle
-let targetRotation = 0;  // target rotation based on scroll
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY; // how far user has scrolled
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = scrollTop / docHeight; // 0 = top, 1 = bottom
 
-function updateHamster() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight;
-    const winHeight = window.innerHeight;
+  // Move hamster vertically based on scroll
+  const maxY = window.innerHeight - chomik.clientHeight;
+  const y = scrollPercent * maxY;
 
-    const scrollable = docHeight - winHeight;
-    const progress = scrollTop / scrollable; // 0 → 1
+  // Rotate hamster for fun
+  const rotation = scrollPercent * 720; // 2 full spins across page
 
-    // Vertical position (smooth handled by CSS transition)
-    const positionY = progress * (winHeight - chomik.offsetHeight);
+  chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
+});
 
-    // Target rotation based on scroll
-    targetRotation = scrollTop % 360;
-
-    // Smoothly approach target rotation (momentum)
-    currentRotation += (targetRotation - currentRotation) * 0.1; // adjust 0.1 for speed
-
-    // Apply transform
-    chomik.style.transform = `translateX(-50%) translateY(${positionY}px) rotate(${currentRotation}deg)`;
-
-    requestAnimationFrame(updateHamster);
-}
-
-// Start the loop
-updateHamster();
