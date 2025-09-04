@@ -10,15 +10,15 @@ body {
     transform: translateX(-50%) translateY(0px) rotate(0deg);
     z-index: 9999;
     transition: transform 0.2s ease-out; /* smooth sliding for Y */
-    width: 8vw;            /* responsive width relative to viewport */
-    max-width: 60px;       /* prevent it from getting too big on desktop */
+    width: 150px;            /* responsive width relative to viewport */
+    max-width: 160px;       /* prevent it from getting too big on desktop */
     height: auto;          /* maintain aspect ratio */
 }
 
 /* Mobile/Tablet adjustments */
 @media (max-width: 950px) {
     #chomik {
-        width: 12vw;        /* slightly bigger on smaller screens */
-        max-width: 50px;
+        width: 150px;        /* slightly bigger on smaller screens */
+        max-width: 150px;
     }
 }
