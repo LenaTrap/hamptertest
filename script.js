@@ -1,17 +1,34 @@
-const chomik = document.getElementById("chomik");
+window.addEventListener("DOMContentLoaded", () => {
+  const chomik = document.getElementById("chomik");
 
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY; // how far user has scrolled
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = scrollTop / docHeight; // 0 = top, 1 = bottom
+  // Costume list
+  const costumes = [
+    "chomiczek.png",
+    "chomiczek_hat.png",
+    "chomiczek_armor.png",
+    "chomiczek_cape.png"
+  ];
 
-  // Move hamster vertically based on scroll
-  const maxY = window.innerHeight - chomik.clientHeight;
-  const y = scrollPercent * maxY;
+  // Pick a random costume
+  const randomIndex = Math.floor(Math.random() * costumes.length);
+  chomik.src = costumes[randomIndex];
 
-  // Rotate hamster for fun
-  const rotation = scrollPercent * 720; // 2 full spins across page
+  // Make hamster visible only when costume is loaded
+  chomik.onload = () => {
+    chomik.style.visibility = "visible";
+  };
 
-  chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
+  // Scroll animation
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollTop / docHeight;
+
+    const maxY = window.innerHeight - chomik.clientHeight;
+    const y = scrollPercent * maxY;
+
+    const rotation = scrollPercent * 720; // 2 spins
+
+    chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
+  });
 });
-
