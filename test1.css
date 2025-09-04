@@ -14,8 +14,6 @@ body {
     max-width: 80px;   /* don’t get too big */
     height: auto;
     z-index: 9999;     /* make sure he’s on top */
-    border: 2px solid red; /* debug border, remove later */
-    background: white;     /* debug background, remove later */
 }
 
 /* Tablet adjustments */
