@@ -2,12 +2,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const chomik = document.getElementById("chomik");
 
   // Costume list
-  const costumes = [
-    "chomiczek.png",
-    "chomiczek_hat.png",
-    "chomiczek_armor.png",
-    "chomiczek_cape.png"
-  ];
+      const costumes = [
+        "chomiczek.png",
+        "chomiczek_Lila.png",
+        "chomiczek_Julia.png",
+        "chomiczek_Kasia.png",
+        "chomiczek_Natalia.png"
+      ];
 
   // Pick a random costume
   const randomIndex = Math.floor(Math.random() * costumes.length);
