@@ -1,17 +1,3 @@
-window.addEventListener("DOMContentLoaded", () => {
-    const chomik = document.getElementById("chomik");
-
-    // List of hamster costumes
-    const costumes = [
-       "chomiczek.png",
-        "chomiczek_Lila.png",
-        "chomiczek_Julia.png",
-        "chomiczek_Kasia.png",
-        "chomiczek_Natalia.png"
-    ];
-
-    // Pick a random costume on page load
-    chomik.src = costumes[Math.floor(Math.random() * costumes.length)];
 
     // Function to update hamster position on scroll
     function updateHamsterPosition() {
