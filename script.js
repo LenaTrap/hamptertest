@@ -1,21 +1,16 @@
+const chomik = document.getElementById("chomik");
 
-    // Function to update hamster position on scroll
-    function updateHamsterPosition() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = scrollTop / docHeight;
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY; // how far user has scrolled
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = scrollTop / docHeight; // 0 = top, 1 = bottom
 
-        const maxY = window.innerHeight - chomik.offsetHeight;
-        const y = scrollPercent * maxY;
+  // Move hamster vertically based on scroll
+  const maxY = window.innerHeight - chomik.clientHeight;
+  const y = scrollPercent * maxY;
 
-        const rotation = scrollPercent * 720; // spins twice
+  // Rotate hamster for fun
+  const rotation = scrollPercent * 720; // 2 full spins across page
 
-        chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
-    }
-
-    // Update on scroll
-    window.addEventListener("scroll", updateHamsterPosition);
-
-    // Run once on page load in case not at top
-    updateHamsterPosition();
+  chomik.style.transform = `translateX(-50%) translateY(${y}px) rotate(${rotation}deg)`;
 });
